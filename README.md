@@ -13,9 +13,11 @@ Web application was written on .Net Core, Asp.Net Core, EF Core, Identity Server
 
 Just clone repo.
 
-In Visual Studio, in Package Manager Console  run command **update-database**.
+Open solution *CustomerProfile.sln* in Visual Studio.
 
-New local SQL Db *CustomerProfile* will be generated.
+In Package Manager Console  run command **update-database**.
+
+New local SQL Db *CustomerProfile* will be generated.  (Look at  *SQL Server Object Explorer*)
 
 Open Web site.
 
