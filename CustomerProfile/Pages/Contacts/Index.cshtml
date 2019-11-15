@@ -1,0 +1,43 @@
+﻿@page
+@model CustomerProfile.Pages.Contacts.IndexModel
+
+@{
+    ViewData["Title"] = "Customer's Contacts";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Contacts[0].FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Contacts[0].LastName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Contacts) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ContactsID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ContactsID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ContactsID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
